@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+    --bg: #a4b3e2;
+    --pale: hsl(225, 100%, 94%);
+    --bright: hsl(245, 75%, 52%);
+    --veryPale: hsl(225, 100%, 98%);
+    --desaturated: hsl(224, 23%, 55%);
+    --dark: hsl(223, 47%, 23%);
+    --hat: 'Red Hat Display', sans;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--hat);
+}
+
+body {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pale);
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pale);
+}
+
+.bg {
+    background-image: url('images/pattern-background-desktop.svg');
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 500px;
+    position: relative;
+    z-index: 1;
+    top: -200px;
+    left: 0;
+}
+
+.card {
+    width: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 99;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    box-shadow: 5px 10px 20px hsla(224, 23%, 55%, 0.5);
+}
+.card .card-top {
+    width: 450px;
+    height: 220px;
+    background-image: url('images/illustration-hero.svg');
+    background-size: cover;
+    background-position: center;
+}
+.card .card-btm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-btm .content {
+    padding: 25px;
+    text-align: center;
+}
+
+.card-btm .content h1 {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--dark);
+}
+
+.card-btm .content p {
+    color: var(--desaturated);
+    font-size: 17px;
+    margin: 19px 23px 0;
+    line-height: 1.5;
+}
+
+.card-btm .plan {
+    display: flex;
+    align-items: center;
+    background-color: var(--veryPale);
+    padding: 20px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-bottom: 35px;
+    border-radius: 10px;
+} 
+
+.plan img {
+    width: 50px;
+    height: 50px;
+}
+
+.plan .plan-desc {
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 70px;
+}
+
+.plan-desc .desc-title {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--dark);
+}
+
+.plan-desc .cost {
+    font-size: 16px;
+    color: var(--desaturated);
+}
+
+.plan .plan-choice {
+    font-size: 15px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.plan .plan-choice:hover {
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all ease 0.3s;
+}
+
+.card-btm .btn-pay {
+    padding: 15px 100px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    box-shadow: 5px 10px 20px hsla(245, 75%, 52%, 0.5);
+    background-color: var(--bright);
+}
+
+.card-btm .btn-pay:hover {
+    opacity: 0.7;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+
+.card-btm .btn-cancel {
+    padding: 15px 100px;
+    border-radius: 10px;
+    color: var(--desaturated);
+}
+
+.card-btm .btn-cancel:hover {
+    color: var(--dark);
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    font-size: 10px;
+    padding: 5px;
+}
+
+@media (max-width: 375px) {
+    .bg {
+        background-image: url('images/pattern-background-mobile.svg');
+    }
+    .card {
+        width: 350px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .card .card-top {
+        width: 100%;
+    }
+
+    .card .card-btm {
+        padding: 10px;
+    }
+
+    .card .card-btm .content p {
+        font-size: 15px;
+    }
+
+    .card .plan {
+        padding: 20px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .plan img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .plan .plan-desc {
+        margin-right: 35px;
+    }
+
+    .card-btm .btn-pay,
+    .card-btm .btn-cancel {
+        padding: 15px 75px;
+    }
+}
